@@ -1,0 +1,65 @@
+<!-- src/app/app.component.html -->
+
+
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+  
+
+    <title>{{ title }}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/grid/">
+
+  </head>
+
+  <body>
+        <script src="node_modules/chart.js/Chart.min.js"></script>
+  <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <div class="container">
+
+      <h1>Game Library</h1>
+      <p class="lead">A table of games with graphs and charts to visualise this data.</p>
+
+      <h3>Publishers</h3>
+      <p>A Doughnut Chart displaying distribution of publishers</p>
+
+      <doughnut-chart></doughnut-chart>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-1"><strong>Title</strong></div>
+			<div class="col-1">Max Players</div>
+			<div class="col-1">Online</div>
+			<div class="col-1">Genres</div>
+			<div class="col-1">Publishers</div>
+			<div class="col-1">Review Score</div>
+			<div class="col-1">Sales</div>
+			<div class="col-1">Used Price</div>
+			<div class="col-1">Console</div>
+			<div class="col-1">Rating</div>
+			<div class="col-1">Year</div>
+			<div class="col-1">Average Length</div>
+		</div>
+
+	    <div class="row" *ngFor="let game of games">
+	        <div class="col-1">{{ game.title }}</div>
+	        <div class="col-1">{{ game.features_max_players }}</div>
+	        <div class="col-1">{{ game.features_online ? 'Yes' : 'No' }}</div>
+	        <div class="col-1">{{ game.metadata_genres }}</div>
+	        <div class="col-1">{{ game.metadata_publishers }}</div>
+	        <div class="col-1">{{ game.metrics_review_score }}</div>
+	        <div class="col-1">{{ game.metrics_sales }}</div>
+	        <div class="col-1">{{ game.metrics_used_price }}</div>
+	        <div class="col-1">{{ game.release_console }}</div>
+	        <div class="col-1">{{ game.release_rating }}</div>
+	        <div class="col-1">{{ game.release_year }}</div>
+	        <div class="col-1">{{ game.length_all_playstyles_average }}</div>
+    	</div>
+	</div>
+</body></html>
+
+
